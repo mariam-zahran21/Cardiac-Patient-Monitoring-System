@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مستشفى القلب التخصصي</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+
+    <style>
+        .cairo {
+            font-family: "Cairo", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+</head>
+
+
+<body class="cairo bg-gray-50">
+
+    <div class="min-h-screen flex flex-col lg:flex-row">
+        <div id="navbar"></div>
+
+        <div class="flex-1 flex flex-col">
+
+            <div id="header"></div>
+
+            <main class="flex-1 p-4 sm:p-8">
+
+                <!-- Dashboard content -->
+                <section class="min-h-[85vh] flex items-center justify-center">
+                    <div id="welcome-banner" class="text-center transition-all duration-700 ease-out">
+                        <h1 class="text-4xl font-black text-gray-800 tracking-tight">
+                            أهلاً بعودتك، د. إسلام زيد
+                        </h1>
+                    </div>
+                </section>
+
+                <section>
+
+                    <div id="overview-heading" class="text-center mb-6 opacity-0 translate-y-6 transition-all duration-700 ease-out">
+                        <p class="text-lg text-gray-500 font-medium">
+                            نظرة عامة على حالة المرضى والإحصائيات
+                        </p>
+                    </div>
+
+                    <div id="stats-cards" class="flex flex-wrap justify-center items-center gap-6 w-full mb-10 opacity-0 pointer-events-none transition-all duration-700 ease-out">
+
+                        <!-- Critical Cases statistics card -->
+                        <a href="#critical-cases-section" class="stat-card opacity-0 translate-y-6 w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
+                  px-4 sm:px-5 flex items-center justify-between shadow-sm
+                  hover:bg-red-50 hover:text-red-700 hover:-translate-y-1 hover:shadow-md
+                  transition-all duration-500 group">
+
+                                <div class="w-12 h-12 rounded-lg bg-red-50 text-red-600
+                     flex items-center justify-center shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-400">الحالات الحرجة</p>
+                                    <p id="stat-critical" class="text-2xl font-black text-gray-800 leading-tight">...</p>
+                                </div>
+                            </a>
+
+                            <a href="patients.html" class="stat-card opacity-0 translate-y-6 w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
+                  px-4 sm:px-5 flex items-center justify-between shadow-sm
+                  hover:bg-teal-50 hover:text-teal-700 hover:-translate-y-1 hover:shadow-md
+                  transition-all duration-500 group" style="transition-delay: 100ms;">
+
+                                <div class="w-12 h-12 rounded-lg bg-teal-50 text-teal-600
+                    flex items-center justify-center shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-user-group text-xl"></i>
+                                </div>
+
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-400">المرضى</p>
+                                    <p id="stat-patients" class="text-2xl font-black text-gray-800 leading-tight">...</p>
+                                </div>
+                            </a>
+
+
+                            <a href="vitals.html" class="stat-card opacity-0 translate-y-6 w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
+                  px-4 sm:px-5 flex items-center justify-between shadow-sm
+                  hover:bg-teal-50 hover:text-teal-700 hover:-translate-y-1 hover:shadow-md
+                  transition-all duration-500 group" style="transition-delay: 200ms;">
+
+                                <div class="w-12 h-12 rounded-lg bg-teal-50 text-teal-600
+                    flex items-center justify-center shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-heart-pulse text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-400">العلامات الحيوية</p>
+                                    <p id="stat-vitals" class="text-2xl font-black text-gray-800 leading-tight">...</p>
+                                </div>
+                            </a>
+
+
+                            <a href="appointments.html" class="stat-card opacity-0 translate-y-6 w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
+                  px-4 sm:px-5 flex items-center justify-between shadow-sm
+                  hover:bg-teal-50 hover:text-teal-700 hover:-translate-y-1 hover:shadow-md
+                  transition-all duration-500 group" style="transition-delay: 300ms;">
+
+                                <div class="w-12 h-12 rounded-lg bg-teal-50 text-teal-600
+                    flex items-center justify-center shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-calendar-days text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-400">المواعيد</p>
+                                    <p id="stat-appointments" class="text-2xl font-black text-gray-800 leading-tight">...</p>
+                                </div>
+                            </a>
+
+
+                            <a href="reports.html" class="stat-card opacity-0 translate-y-6 w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
+                  px-4 sm:px-5 flex items-center justify-between shadow-sm
+                  hover:bg-teal-50 hover:text-teal-700 hover:-translate-y-1 hover:shadow-md
+                  transition-all duration-500 group" style="transition-delay: 400ms;">
+
+                                <div class="w-12 h-12 rounded-lg bg-teal-50 text-teal-600
+                    flex items-center justify-center shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-chart-column text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm text-gray-400">التقارير</p>
+                                    <p id="stat-reports" class="text-2xl font-black text-gray-800 leading-tight">...</p>
+                                </div>
+                            </a>
+
+                    </div>
+
+                </section>
+
+                <!-- Red Divider Section: Add Critical Patient -->
+                <section class="-mx-4 sm:-mx-8 mt-40 mb-10">
+                    <div class="bg-red-700 overflow-hidden">
+                        <div class="p-6 sm:p-8 sm:px-8 lg:px-12">
+                            <div class="flex items-center gap-3 mb-1">
+                                <div class="w-10 h-10 rounded-lg bg-white/15 text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-triangle-exclamation text-lg"></i>
+                                </div>
+                                <h2 class="text-xl sm:text-2xl font-black text-white">
+                                    إضافة حالة حرجة جديدة
+                                </h2>
+                            </div>
+                            <p class="text-sm text-red-100 mb-6">أدخل بيانات المريض الجديد لتسجيله على الفور في القائمة</p>
+
+                            <form id="add-critical-form" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <div class="lg:col-span-2">
+                                    <label class="block text-[15px] font-semibold text-white mb-1">اسم المريض</label>
+                                    <input type="text" id="patient-name" required
+                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
+                                        placeholder="الاسم الكامل">
+                                </div>
+                                <div>
+                                    <label class="block text-[15px] font-semibold text-white mb-1">العمر</label>
+                                    <input type="number" id="patient-age" required
+                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
+                                        placeholder="60">
+                                </div>
+                                <div>
+                                    <label class="block text-[15px] font-semibold text-white mb-1">الجنس</label>
+                                    <select id="patient-gender"
+                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white focus:outline-none focus:border-white focus:bg-white/15">
+                                        <option value="ذكر" class="text-gray-800">ذكر</option>
+                                        <option value="أنثى" class="text-gray-800">أنثى</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-[15px] font-semibold text-white mb-1">نبضات القلب
+                                        (bpm)</label>
+                                    <input type="number" id="patient-heart" required
+                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
+                                        placeholder="110">
+                                </div>
+                                <div>
+                                    <label class="block text-[15px] font-semibold text-white mb-1">نسبة الأكسجين
+                                        (%)</label>
+                                    <input type="number" id="patient-oxygen" required
+                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
+                                        placeholder="90">
+                                </div>
+                                <div class="lg:col-span-2">
+                                    <label class="block text-[15px] font-semibold text-white mb-1">التشخيص</label>
+                                    <input type="text" id="patient-diagnosis" required
+                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
+                                        placeholder="مثال: ذبحة صدرية حادة">
+                                </div>
+                                <div>
+                                    <label class="block text-[15px] font-semibold text-white mb-1">رقم الهاتف</label>
+                                    <input type="text" id="patient-phone" required
+                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
+                                        placeholder="0599000000">
+                                </div>
+                                <div class="sm:col-span-2 lg:col-span-4">
+                                    <button type="submit"
+                                        class="w-full bg-white hover:bg-red-50 text-red-700 font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-plus text-sm"></i>
+                                        إضافة الحالة كحرجة
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-col justify-between mb-6">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h2 class="text-lg font-bold text-gray-800 border-r-4 border-teal-500 pr-2">
+                                المواعيد القادمة
+                            </h2>
+                            <div class="text-sm font-bold text-teal-650" id="calendar-month-year">
+                                أغسطس 2026
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-4">تصفح مواعيد زيارات المرضى. ضع مؤشر الفأرة على الأيام
+                            المميزة بالتحديد لتفاصيل الموعد.</p>
+                    </div>
+
+                    <div class="w-full">
+                        <div
+                            class="grid grid-cols-7 gap-1 text-center font-bold text-xs text-gray-500 mb-2 border-b border-gray-150 pb-2">
+                            <div>ح</div>
+                            <div>ن</div>
+                            <div>ث</div>
+                            <div>ر</div>
+                            <div>خ</div>
+                            <div>ج</div>
+                            <div>س</div>
+                        </div>
+                        <div id="calendar-days-grid"
+                            class="grid grid-cols-7 gap-1 text-center text-sm font-semibold">
+                            <!--fill it from js-->
+                        </div>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-teal-50 border border-teal-100 rounded-lg flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-teal-600/10 text-teal-600 rounded-lg flex items-center justify-center text-base shrink-0">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </div>
+                        <div class="text-[11px] text-teal-700 font-medium" id="hover-appointment-details">
+                            مرر الفأرة فوق أي تاريخ محدد بنقاط زرقاء لعرض تفاصيل موعد زيارة المريض هنا.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <div id="critical-cases-section" class="bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col scroll-mt-24">
+                        <div class="p-5 border-b border-gray-200 flex items-center justify-between">
+                            <h2 class="text-base font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                                الحالات الحرجة الحالية
+                            </h2>
+                            <a href="vitals.html" class="text-xs font-semibold text-teal-600 hover:text-teal-700">عرض
+                                الكل</a>
+                        </div>
+                        <div class="overflow-x-auto flex-1">
+                            <table class="w-full text-xs text-right">
+                                <thead class="bg-gray-50 border-b border-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">الاسم</th>
+                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">النبض /
+                                            الأكسجين</th>
+                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">التشخيص</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="critical-patients-small-body" class="divide-y divide-gray-100">
+                                    <!--filled from js-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-5 border-b border-gray-200 flex items-center justify-between">
+                            <h2 class="text-base font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
+                                أحدث المرضى المضافين
+                            </h2>
+                            <a href="patients.html" class="text-xs font-semibold text-teal-600 hover:text-teal-700">عرض
+                                الكل</a>
+                        </div>
+                        <div class="overflow-x-auto flex-1">
+                            <table class="w-full text-xs text-right">
+                                <thead class="bg-gray-50 border-b border-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">الاسم</th>
+                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">العمر /
+                                            الجنس</th>
+                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">التشخيص</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-patients-small-body" class="divide-y divide-gray-100">
+                                    <!-- filled from js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="p-5 border-b border-gray-200 flex items-center justify-between">
+                        <h2 class="text-base font-bold text-gray-800">
+                            نظرة سريعة على جميع المرضى
+                        </h2>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-right">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">الاسم</th>
+                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">العمر</th>
+                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">الجنس</th>
+                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">نبض القلب</th>
+                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">ضغط الدم</th>
+                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">الأكسيجين</th>
+                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">التشخيص</th>
+                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">الحالة الصحية</th>
+                                </tr>
+                            </thead>
+                            <tbody id="overview-patients-table-body" class="divide-y divide-gray-100">
+                                <!-- from dashboard.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </main>
+
+            <div id="footer"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/components.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const statsCardsContainer = document.getElementById("stats-cards");
+            const statCards = document.querySelectorAll('.stat-card');
+            const welcomeBanner = document.getElementById("welcome-banner");
+            const overviewHeading = document.getElementById("overview-heading");
+
+            let cardsRevealed = false;
+
+            window.addEventListener("scroll", () => {
+                if (!statsCardsContainer) return;
+
+                const scrollY = window.scrollY;
+
+                if (scrollY > 80 && !cardsRevealed) {
+                    cardsRevealed = true;
+                    statsCardsContainer.classList.remove("opacity-0", "pointer-events-none");
+
+                    if (overviewHeading) {
+                        overviewHeading.classList.remove("opacity-0", "translate-y-6");
+                    }
+
+                    setTimeout(() => {
+                        statCards.forEach(card => {
+                            card.classList.remove('opacity-0', 'translate-y-6');
+                        });
+                    }, 50);
+                } else if (scrollY <= 80 && cardsRevealed) {
+                    cardsRevealed = false;
+                    statsCardsContainer.classList.add("opacity-0", "pointer-events-none");
+
+                    if (overviewHeading) {
+                        overviewHeading.classList.add("opacity-0", "translate-y-6");
+                    }
+
+                    statCards.forEach(card => {
+                        card.classList.add('opacity-0', 'translate-y-6');
+                    });
+                }
+
+                if (welcomeBanner) {
+                    if (scrollY > 40) {
+                        welcomeBanner.style.opacity = "0";
+                        welcomeBanner.style.transform = "scale(0.95) translateY(-20px)";
+                        welcomeBanner.style.pointerEvents = "none";
+                    } else {
+                        welcomeBanner.style.opacity = "1";
+                        welcomeBanner.style.transform = "scale(1) translateY(0)";
+                        welcomeBanner.style.pointerEvents = "auto";
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
